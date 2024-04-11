@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDL - Flats</title>
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+<style>
+    @media screen and (max-width:648px){
+        img{
+          width: 100%;
+        }
+          #aboutus{
+            display: none;
+          }
+        .slideshow-container{
+        width: 100%;
+          }
+          .space{
+          margin: 5px;
+        
+        }}
+                /*Different Fonts Used in the WEBSITE*/
+               
+                @font-face {
+                    font-family:recolecta;
+                    src: url(Fonts/Recoleta-RegularDEMO.otf);
+                }
+                @font-face {
+                    font-family:butler;
+                    src: url(Fonts/Butler_Medium.otf);
+                }
+                @font-face {
+                    font-family:butlerregular;
+                    src: url(Fonts/Butler_Regular.otf);
+                }
+    
+                #navigation{
+                  text-decoration: none; color: #2F2420; outline-color: #2F2420;  scrollbar-color: white;
+                }
+                /*About Us Text */
+                #aboutus{
+                    width:250px; height: 250px; 
+                }
+                /*Navigation Bar*/
+                nav{
+                    background-color: #E3DFDB; color: #2F2420; width: 750px; height: 30px; text-align: center; font-family: recolecta; font-size: 20px; margin-top: 10px;
+                    border: #2F2420 0.5px solid; 
+                }
+                /*Logo*/
+                #logobg{
+                    width: 80px; height: 105px;
+                }
+                /*Photos in The Main Page w Link*/
+                #mainfotos{
+                width: 240; height: 240px; border: 3px solid #2F2420; text-decoration: none;  color: rgb(0, 0, 0);
+                }
+              
+                #blanks{
+                    width: 25px; height: 25px;
+                }
+
+                /*Icons Top Right Corner*/
+                #icons2{
+                    width: 20px; height: 20px; background-color: #E3DFDB;
+                }
+
+                /*Buttons for the Icons*/
+                button{
+                    background-color: #F1F1F1; border: none;
+                }
+                /*Search Tab Size*/
+                input{
+                    height: 25px;
+                }
+                * {box-sizing:border-box}
+
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+        
+        /*Black Box at the Bottom*/
+        .blackbox{
+          width: 100%; height: 150px; background-color:#E3DFDB; color: #2F2420; font-family: recolecta; font-size: 13px; border: #2F2420 2px solid;
+        }
+        .space{
+          margin: 50px;
+        }
+        #feedback{
+          text-align: left;
+        }
+        /*Searchbar CSS*/
+        #searchcateg{
+            padding:13px; border-color: #2F2420; font-family: butlerregular; font-size: 10px;
+           }
+           input[type=text] {
+              -webkit-transition: width 0.15s ease-in-out;
+              transition: width 0.15s ease-in-out;
+           }
+           /*Search Tab Size*/
+        input{
+            height: 30px;
+        }
+        * {box-sizing:border-box}
+        #list{
+  display: none;}
+     
+
+        @media screen and (max-width:600px){
+#nav{
+  width: 600px;
+}
+#rows{
+    display:inline;
+}
+#navigation{
+    width: 600px;
+}
+#products{
+    display: inline-table;
+}
+.blackbox{
+display:inline; background-size: cover; background-color: #E3DFDB; text-align: right;
+}
+.space{
+    margin: 5px;
+}
+#feedback{
+    text-align: left;
+}
+.bigcontainer{
+    width:100%;
+}
+
+}
+        /*Bold Letters*/
+
+        h3{
+            font-size: 20x; font-family: Arial, Helvetica, sans-serif;
+        }
+      
+        #blanks{
+            width: 25px; height: 25px;
+        }
+
+ /*Black Box at the Bottom*/
+.space{
+  margin: 50px;
+}
+#feedback{
+  text-align: left;
+}
+ /*Product Boxes*/
+.shoename{
+      font-size: 16px; font-family: recolecta;  color: #4D4032; background-color:#F1F1F1; text-align: center; border-top: #2F2420 solid 1px; border-bottom: #2F2420 solid 1px;}
+.shopbox{
+    width: 150px; height: 175px; background-color: #E3DFDB; border: #2F2420 solid 1px; font-family: recolecta;
+}
+.products{
+     width: 100px; height: 100px; margin-top: 15px; margin-left: 25px; margin-right: 25px; border: #2F2420 solid 1px; background-color: #F1F1F1;
+}
+
+/*Everything That Has to do with the slideshow*/
+    .slideshow-container {
+          max-width: 500px;
+          position: relative;
+        }
+        
+        .mySlides {
+          display: none;
+        }
+        
+        /*Previous and Next Buttons*/
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        .prev {
+          left: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+        * {box-sizing:border-box}
+        
+        #reservation{
+            text-align: right; margin-left: 70%; color: #877C69; text-decoration: none;
+        }
+            </style>
+        </head>
+        <body bgcolor="#F1F1F1">
+          <!--Start of HTML Code-->
+            <center><table id="nav">
+                <tr>
+                  <!--Navigation Bar Code-->
+                    <td><a href="index.html"><img  id="logobg" src="Images/logohome2.png"></a><td>
+                    <td><nav><a id="navigation" class="space" href="sandals.html">Sandals</a><a  id="navigation" class="space" href="pumps.html">Pumps</a><a id="navigation" class="space" style="color: #877C69;" href="flats.html">Flats</a></nav></td>
+                    <td> <input type="text" id="searchcateg" name="search" placeholder="Search Categories..."> </input><button onclick="search_product()" style="background-color: #F1F1F1;"><img id="icons2" src="Images/searchicon.png"></button></td>
+                    </table>
+                </tr>
+                <!--Start of Slideshow container Code-->
+                <td>
+                    <div class="slideshow-container">
+                    
+    
+                      <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img src="Images/banner7.png" style="width:100%">
+                      </div>
+                    
+                      <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img src="Images/banner2.png" style="width:100%">
+                      </div>
+                    
+                      
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+            
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span>
+                      <span class="dot" onclick="currentSlide(2)"></span>
+                    
+                    </div></td>
+            
+                    <br>
+                <div class="bigcontainer"> <table id="rows"><tr>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat1.webp"><p class="shoename">Regal Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat2.png"><p class="shoename">Elysian Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat3.webp"><p class="shoename">Serene Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat4.webp"><p class="shoename">Posh Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat5.webp"><p class="shoename">Lustrous Flat</p><br></div></td></tr></table>
+                    <br>
+                
+                <table id="rows"><tr>
+                <td><div class="shopbox"><img class="products" src="Images/Flats/flat6.webp"><p class="shoename">Paradigm Flat</p><br></div></td>
+                <td><img id="blanks" src="Images/blank.png"></td>
+                <td><div class="shopbox"><img class="products" src="Images/Flats/flat7.webp"><p class="shoename">Opulent Flat</p><br></div></td>
+                <td><img id="blanks" src="Images/blank.png"></td>
+                <td><div class="shopbox"><img class="products" src="Images/Flats/flat8.webp"><p class="shoename">Velvet Flat</p><br></div></td>
+                <td><img id="blanks" src="Images/blank.png"></td>
+                <td><div class="shopbox"><img class="products" src="Images/Flats/flat9.webp"><p class="shoename">Mystique Flat</p><br></div></td>
+                <td><img id="blanks" src="Images/blank.png"></td>
+                <td><div class="shopbox"><img class="products" src="Images/Flats/flat10.webp"><p class="shoename">Velour Flat</p><br></div></td></tr></table>
+                <br>
+                
+                <table id="rows"><tr>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat11.webp"><p class="shoename">Royale Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat12.webp"><p class="shoename">Pristine Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat13.png"><p class="shoename">Sophisticate Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat14.webp"><p class="shoename">Dainty Flat</p><br></div></td>
+                    <td><img id="blanks" src="Images/blank.png"></td>
+                    <td><div class="shopbox"><img class="products" src="Images/Flats/flat15.png"><p class="shoename">Euphoria Flat</p><br></div></td>
+                  </tr></table></div>
+                    <br><br>
+        
+            
+                    <!--Information Box at The End-->
+                <div class="blackbox">
+                    <tr>
+                      <td><br><p>Scarpe Di Lusso Privacy Policy <a class="space"> </a> Copyright owned by Scarpe Di Lusso 2023 <a class="space"> </a> Based in Milan</p></td>
+                      <td><p id="feedback"><a class="space"></a><a class="space"></a>Send us feedback!  657-DIL-USSO <a class="space"></a><a class="space"></a><a href="reservation.html" id="reservation">Make Your Showroom Reservation.</a></p></td>
+                      <td><a id="navigation" class="space" href="sandals.html">Sandals</a><a id="navigation" class="space"href="pumps.html" >Pumps</a><a id="navigation" class="space" style="color: #877C69;" href="flats.html">Flats</a></td>
+                    </tr>
+                    </div>
+                    
+                    <script>
+          
+                        let slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      let i;
+                      let slides = document.getElementsByClassName("mySlides");
+                      let dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";
+                      dots[slideIndex-1].className += " active";
+                    }
+                    function search_product() {
+                        let searchb = document.getElementById('searchcateg').value;
+                        if(searchb == "pumps"){
+                            location.href="pumps.html";}
+                        else{
+                              location.href="index.html";
+                            }
+                        if(searchb == "sandals"){
+                          location.href = "sandals.html";
+                        }
+                        if(searchb == "flats"){
+                          location.href = "flats.html";
+                        }
+                          }</script>
+</body>
+</html>
